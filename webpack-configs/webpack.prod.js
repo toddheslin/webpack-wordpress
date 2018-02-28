@@ -1,13 +1,4 @@
-const webpack = require('webpack')
+const webpack = require('webpack') // eslint-disable-line no-unused-vars
 const compiler = require('../webpack.config.js').compiler
-
-compiler.devtool = 'source-map'
-
-// Error: webpack.optimize.UglifyJsPlugin has been removed, please use config.optimization.minimize instead.
-// compiler.plugins.push(new webpack.optimize.UglifyJsPlugin({
-//   minimize: true,
-//   sourceMap: false,
-//   output: { comments: false }
-// }))
 
 module.exports = compiler

@@ -1,15 +1,16 @@
 {
   "name": "webpack-wordpress",
-  "author": "Sloan Sparger",
-  "version": "0.0.0",
+  "author": "Todd Heslin <todd@beingremarkable.me>",
+  "version": "0.1.0",
   "description": "Build Wordpress themes using Webpack and Hot Module Reloading",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "babel-preset-env": "^1.6.1"
+  },
   "devDependencies": {
     "autoprefixer": "^8.0.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.3",
-    "babel-preset-es2015": "^6.24.1",
     "copy-webpack-plugin": "^4.4.2",
     "css-loader": "^0.28.10",
     "eslint": "^4.18.1",
@@ -20,7 +21,6 @@
     "eslint-plugin-standard": "^3.0.1",
     "file-loader": "^1.1.10",
     "node-sass": "^4.7.2",
-    "open-browser-webpack-plugin": "0.0.5",
     "postcss-loader": "^2.1.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.2",
@@ -32,9 +32,8 @@
     "write-file-webpack-plugin": "^4.2.0"
   },
   "scripts": {
-    "build": "webpack --config webpack-configs/webpack.prod.js",
-    "dev": "webpack-dashboard -- webpack-dev-server --inline --hot --port=3000 --config webpack-configs/webpack.dev.js",
-    "setup": "mkdir wordpress && cd wordpress && wp core download && cp ../wp-config.php wp-config.php && cd ..",
-    "stage": "webpack --config webpack-configs/webpack.stage.js"
+    "build": "webpack --config webpack-configs/webpack.prod.js --mode production",
+    "dev": "webpack-dashboard -- webpack-dev-server --open --config webpack-configs/webpack.dev.js --mode development",
+    "setup": "mkdir wordpress && cd wordpress && wp core download && cp ../wp-config.php wp-config.php && cd .."
   }
 }

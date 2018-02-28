@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+const webpack = require('webpack') // eslint-disable-line no-unused-vars
 const join = require('path').join
 const autoprefixer = require('autoprefixer')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -20,8 +20,13 @@ exports.compiler = {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader?presets=es2015',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
       },
       {
         test: /\.sass$/,
