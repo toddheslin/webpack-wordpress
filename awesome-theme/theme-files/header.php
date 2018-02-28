@@ -18,7 +18,7 @@
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/bundle.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/assets/bundle.js"></script>
 	<?php wp_head(); ?>
 </head>
 

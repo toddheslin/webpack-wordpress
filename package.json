@@ -27,7 +27,7 @@
   "scripts": {
     "build": "webpack --config webpack-configs/webpack.prod.js",
     "dev": "webpack-dashboard -- webpack-dev-server --inline --hot --port=3000 --config webpack-configs/webpack.dev.js",
-    "setup": "mkdir wordpress && cd wordpress && wp core download && cd ..",
+    "setup": "mkdir wordpress && cd wordpress && wp core download && cp ../wp-config.php wp-config.php && cd ..",
     "stage": "webpack --config webpack-configs/webpack.stage.js"
   }
 }
